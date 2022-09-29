@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+  <changeSet author="nick" id="add-task-tracking-schema">
+    <sqlFile path="schemas/task_tracking.sql" relativeToChangelogFile="true" />
+  </changeSet>
+  <changeSet author="nick" id="add-task-table">
+    <sqlFile path="tables/task.sql" relativeToChangelogFile="true" />
+  </changeSet>
+  <changeSet author="nick" id="add-user-table">
+    <sqlFile path="tables/user.sql" relativeToChangelogFile="true" />
+  </changeSet>
+  <changeSet author="nick" id="2022-08-08-alter-user-password-column-name">
+    <sqlFile path="migrations/2022-08-08-alter-user-password-column-name.sql" relativeToChangelogFile="true" />
+  </changeSet>
+  <changeSet author="nick" id="2022-08-10-drop-user-salt">
+    <sqlFile path="migrations/2022-08-10-drop-user-salt.sql" relativeToChangelogFile="true" />
+  </changeSet>
+</databaseChangeLog>

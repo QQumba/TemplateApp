@@ -1,0 +1,1 @@
+﻿ALTER TABLE task_tracking.user RENAME COLUMN password TO password_hash;   

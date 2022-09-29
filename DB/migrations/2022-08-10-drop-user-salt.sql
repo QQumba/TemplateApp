@@ -1,0 +1,1 @@
+﻿ALTER TABLE task_tracking.user DROP COLUMN salt;   

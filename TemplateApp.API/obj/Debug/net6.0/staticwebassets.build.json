@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "x5IZqFDOZFZwiraW4kSALazf0VbrszBWENV5LTWkZDI=",
+  "Source": "TemplateApp.API",
+  "BasePath": "_content/TemplateApp.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
