@@ -1,0 +1,13 @@
+@import "../node_modules/bootstrap/scss/functions";
+
+// override colors here
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$form-validation-states: (
+  'invalid': (
+    'color': $danger,
+    'icon': none
+  )
+);

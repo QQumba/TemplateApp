@@ -1,0 +1,14 @@
+@import "../../../variables.scss";
+
+label {
+  font-size: 0.8rem;
+  color: $label;
+  font-weight: 500;
+}
+
+.validation-error {
+  font-size: 0.8rem;
+  color: $label;
+  font-weight: 400;
+  color: $danger;
+}

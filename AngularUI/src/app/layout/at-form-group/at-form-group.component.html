@@ -1,0 +1,52 @@
+<form [formGroup]="form">
+  <app-at-input [form]="form" inputControlName="name" class="mb-2">
+  </app-at-input>
+  <div formGroupName="address" class="mb-2">
+    <label class="required">Street</label>
+    <input
+      type="text"
+      class="form-control form-control-sm"
+      [ngClass]="{ 'is-invalid': helper.hasError('address.street') }"
+      placeholder="Street"
+      formControlName="street"
+    />
+    <div class="validation-error" *ngIf="helper.hasError('address.street')">
+      <div *ngIf="helper.getValidationError('street', 'error') as error">
+        <fa-icon [icon]="warning"></fa-icon>
+        {{ error }}
+      </div>
+      <div
+        *ngIf="helper.getValidationError('address.street', 'required') as error"
+      >
+        <fa-icon [icon]="warning"></fa-icon>
+        This field is required
+      </div>
+    </div>
+    <div formGroupName="zip" class="mb-2">
+      <label class="required">A</label>
+      <input
+        type="text"
+        class="form-control form-control-sm"
+        [ngClass]="{ 'is-invalid': helper.hasError('address.zip.a') }"
+        placeholder="a"
+        formControlName="a"
+      />
+      <div class="validation-error" *ngIf="helper.hasError('address.zip.a')">
+        <div
+          *ngIf="helper.getValidationError('address.zip.a', 'error') as error"
+        >
+          <fa-icon [icon]="warning"></fa-icon>
+          {{ error }}
+        </div>
+        <div
+          *ngIf="
+            helper.getValidationError('address.zip.a', 'required') as error
+          "
+        >
+          <fa-icon [icon]="warning"></fa-icon>
+          This field is required
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

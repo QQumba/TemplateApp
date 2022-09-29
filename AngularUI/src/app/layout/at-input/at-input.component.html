@@ -1,0 +1,86 @@
+<ng-container *ngIf="form && helper">
+  <ng-container
+    *ngIf="!formGroupName; then formRootInput; else formGroupInput"
+  ></ng-container>
+</ng-container>
+
+<ng-template #formRootInput>
+  <ng-container [formGroup]="form">
+    <label class="required">{{ inputControlName }}</label>
+    <input
+      type="text"
+      class="form-control form-control-sm"
+      [ngClass]="{ 'is-invalid': helper!.hasError(inputControlName) }"
+      placeholder="{{ inputControlName }}"
+      [formControlName]="inputControlName"
+    />
+    <div class="validation-error" *ngIf="helper!.hasError(inputControlName)">
+      <div
+        *ngIf="helper!.getValidationError(inputControlName, 'error') as error"
+      >
+        <fa-icon [icon]="warning"></fa-icon>
+        {{ error }}
+      </div>
+      <div
+        *ngIf="
+          helper!.getValidationError(inputControlName, 'required') as error
+        "
+      >
+        <fa-icon [icon]="warning"></fa-icon>
+        This field is required
+      </div>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #formGroupInput>
+  <ng-container formGroupName="{{ formGroupName }}" *ngTemplateOutlet="content">
+    <label class="required">{{ inputControlName }}</label>
+    <input
+      type="text"
+      class="form-control form-control-sm"
+      [ngClass]="{ 'is-invalid': helper!.hasError(inputControlName) }"
+      placeholder="{{ inputControlName }}"
+      [formControlName]="inputControlName"
+    />
+    <div class="validation-error" *ngIf="helper!.hasError(inputControlName)">
+      <div
+        *ngIf="helper!.getValidationError(inputControlName, 'error') as error"
+      >
+        <fa-icon [icon]="warning"></fa-icon>
+        {{ error }}
+      </div>
+      <div
+        *ngIf="
+          helper!.getValidationError(inputControlName, 'required') as error
+        "
+      >
+        <fa-icon [icon]="warning"></fa-icon>
+        This field is required
+      </div>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #content>
+  <label class="required">{{ inputControlName }}</label>
+  <input
+    type="text"
+    class="form-control form-control-sm"
+    [ngClass]="{ 'is-invalid': helper!.hasError(inputControlName) }"
+    placeholder="{{ inputControlName }}"
+    [formControlName]="inputControlName"
+  />
+  <div class="validation-error" *ngIf="helper!.hasError(inputControlName)">
+    <div *ngIf="helper!.getValidationError(inputControlName, 'error') as error">
+      <fa-icon [icon]="warning"></fa-icon>
+      {{ error }}
+    </div>
+    <div
+      *ngIf="helper!.getValidationError(inputControlName, 'required') as error"
+    >
+      <fa-icon [icon]="warning"></fa-icon>
+      This field is required
+    </div>
+  </div>
+</ng-template>
